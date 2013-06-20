@@ -362,7 +362,7 @@ Feel free to drop your own grid though.
 
 /* line 39, ../sass/_grid.scss */
 .wide {
-  padding: 0px;
+  margin: 0px;
 }
 
 /* line 1, ../sass/_base.scss */
