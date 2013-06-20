@@ -1,23 +1,10 @@
 /******************************************************************
-Site Name:
-Author:
+Hummingbird Grid
 
-Stylesheet: Grid Stylesheet
+Eddie Machado combined the 1140 grid with Twitter Boostrap for bones. We like it. A lot.
+https://github.com/eddiemachado/bones
 
-I've seperated the grid so you can swap it out easily. It's
-called at the top the style.scss stylesheet.
-
-There are a ton of grid solutions out there. You should definitely
-experiment with your own. Here are some recommendations:
-
-http://gridsetapp.com - Love this site. Responsive Grids made easy.
-http://susy.oddbird.net/ - Grids using Compass. Very elegant.
-http://gridpak.com/ - Create your own responsive grid.
-
-The grid below is a combination of the 1140 grid and Twitter Boostrap. 
-I liked 1140 but Boostrap's grid was way more detailed so I merged them 
-together, let's see how this works out. If you want to use 1140, the original 
-values are commented out on each line.
+Feel free to drop your own grid though.
 
 ******************************************************************/
 
@@ -48,3 +35,7 @@ values are commented out on each line.
 .last {
   float: right;
 }
+
+ .wide {
+ 	padding: 0px;
+ }
