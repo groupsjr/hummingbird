@@ -1,7 +1,8 @@
 Welcome to Hummingbird
 ======================
 
-We really like Foundation, but needed a solution that was faster to deploy and customize.
+We really like the Foundation framework, but needed a solution that was faster to deploy and customize.
+So we put together Hummingbird... It's a barebones grid and file sturcture for starting small dev projects.
 
 
 Group SJR
