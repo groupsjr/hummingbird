@@ -9,9 +9,10 @@ module.exports = function(grunt) {
 	};
 
 	grunt.initConfig({
+		path: paths,
 
 		jshint: {
-			files: ['<%= paths.libDir %>/js/scripts.js'],
+			files: ['<%= path.libDir %>/js/scripts.js'],
 			options: {
 				force: true,
 				globals: {
@@ -26,8 +27,8 @@ module.exports = function(grunt) {
 		uglify: {
 			staging: {
 				files: {
-					'library/js/scripts.min.js': [
-						'library/js/scripts.concat.js'
+					'<%= path.prodDir %>/js/scripts.min.js': [
+						'<%= path.libDir %>/js/scripts.concat.js'
 					]
 				}
 			}
@@ -38,8 +39,8 @@ module.exports = function(grunt) {
 				separator: ';'
 			},
 			dist: {
-				src: ['library/js/libs/*.js', 'library/js/scripts.js'],
-				dest: 'library/js/scripts.concat.js'
+				src: ['<%= path.prodDir %>/js/libs/*.js', '<%= path.prodDir %>/js/scripts.js'],
+				dest: '<%= path.prodDir %>/js/scripts.concat.js'
 			}
 		},
 
@@ -53,7 +54,7 @@ module.exports = function(grunt) {
 					lineNumbers: true
 				},
 				files: {
-					'<%= paths.libDir %>/css/app.css':'<%= paths.libDir %>/scss/app.scss',
+					'<%= path.libDir %>/style/app.css':'<%= path.libDir %>/sass/app.scss'
 				}
 			},
 			prod: {
@@ -61,9 +62,8 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'library/css/ie.css':'library/scss/ie.scss',
-					'library/css/login.css':'library/scss/login.scss',
-					'library/css/style.css':'library/scss/style.scss',
+					'<%= path.libDir %>/style/app.min.css':'<%= path.libDir %>/sass/app.scss',
+					'<%= path.prodDir %>/style/app.css':'<%= path.libDir %>/sass/app.scss'
 				}
 			},
 			aux: {
@@ -71,8 +71,8 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'library/css/ie.css':'library/scss/ie.scss',
-					'library/css/login.css':'library/scss/login.scss',
+					'<%= path.libDir %>/css/ie.css':'<%= path.libDir %>/scss/ie.scss',
+					'<%= path.libDir %>/css/login.css':'<%= path.libDir %>/scss/login.scss',
 				}
 			}
 		},
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
 			dist: {
 				files: [{
 				expand: true,
-				cwd: "<%= path.library %>/images",
+				cwd: "<%= path.libDir %>/images",
 				dest: "<%= path.prodDir %>/images",
 				src: [
 					"**/*.{png,jpg,gif}"
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
 				options: {
 					livereload: false
 				},
-				files: ['<%= paths.libDir %>/scss/*.scss'],
+				files: ['<%= path.libDir %>/scss/*.scss'],
 				tasks: ['sass:dev']
 			},
 
@@ -108,14 +108,16 @@ module.exports = function(grunt) {
 				tasks: []
 			},
 
-			php: {
-				files: ['*.php', 'library/includes/*.php',' library/*.php']
+			html: {
+				files: ['*.html',' library/*.html']
 			}
 
 		}
 
 	});
 
+	grunt.registerTask('js', ['jshint', 'concat', 'uglify' ]);
 	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('build', ['js', 'cssmin' ]);
 
 };
