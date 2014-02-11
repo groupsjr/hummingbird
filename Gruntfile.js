@@ -118,6 +118,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('js', ['jshint', 'concat', 'uglify' ]);
 	grunt.registerTask('default', ['watch']);
-	grunt.registerTask('build', ['js', 'cssmin' ]);
+	grunt.registerTask('build', ['js', 'sass:prod' ]);
 
 };
