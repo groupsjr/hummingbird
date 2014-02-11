@@ -93,6 +93,7 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 				"<%= path.prodDir %>/index.html": "<%= path.prodDir %>/index.html",
+				"<%= path.prodDir %>/README.md": "<%= path.prodDir %>/README.md",
 				}
 			}
 		},
