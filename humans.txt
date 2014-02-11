@@ -1,5 +1,5 @@
-/* Hummingbird is a simple framework by Cody J. Landstrom and Alex Mejias who work for Group SJR in New York City */
-/* groupsjr.com */
+/* Hummingbird is a simple framework by Cody J. Landstrom and Alex Mejias in New York City */
+/* landstrom.co  |  alex-mejias.com */
 /* humanstxt.org */
 
 /* SITE */

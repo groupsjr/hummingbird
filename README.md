@@ -5,10 +5,10 @@ We really like the Foundation framework, but needed a solution that was faster t
 So we put together Hummingbird... It's a barebones grid and file sturcture for starting small dev projects.
 
 
-Group SJR
+Authors
 =========
 
-Hummingbird was made by Cody J. Landstrom and Alex Mejias at Group SJR.
+Hummingbird was made by Cody J. Landstrom and Alex Mejias.
 
 
 WTFPL License
