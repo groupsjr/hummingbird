@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
 	var paths = {
 		libDir: 'library',
-		prodDir: 'prod'
+		prodDir: 'prod/library'
 	};
 
 	grunt.initConfig({
@@ -89,6 +89,13 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
+		processhtml: {
+			dist: {
+				files: {
+				"<%= path.prodDir %>/index.html": "<%= path.prodDir %>/index.html",
+				}
+			}
+		},
 
 		watch: {
 			options: {
@@ -118,6 +125,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('js', ['jshint', 'concat', 'uglify' ]);
 	grunt.registerTask('default', ['watch']);
-	grunt.registerTask('build', ['js', 'sass:prod' ]);
+	grunt.registerTask('build', ['js', 'sass:prod', 'processhtml:dist', 'imagemin:dist' ]);
 
 };
