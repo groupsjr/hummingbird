@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 
 	var paths = {
 		libDir: 'library',
+		prod: 'prod',
 		prodDir: 'prod/library'
 	};
 
@@ -92,8 +93,8 @@ module.exports = function(grunt) {
 		processhtml: {
 			dist: {
 				files: {
-				"<%= path.prodDir %>/index.html": "<%= path.prodDir %>/index.html",
-				"<%= path.prodDir %>/README.md": "<%= path.prodDir %>/README.md",
+				"<%= path.prod %>/index.html": "<%= path.prodDir %>/index.html",
+				"<%= path.prod %>/README.md": "<%= path.prodDir %>/README.md",
 				}
 			}
 		},
